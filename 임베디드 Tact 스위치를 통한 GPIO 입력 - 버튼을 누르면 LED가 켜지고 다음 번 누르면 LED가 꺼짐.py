@@ -5,7 +5,6 @@ import time
 # 사용할 GPIO 핀 번호 설정
 button_pin = 15
 led_pin = 4
-# 다음 페이지에서 계속됨
 
 # 불필요한 warning 제거
 GPIO.setwarnings(False)
