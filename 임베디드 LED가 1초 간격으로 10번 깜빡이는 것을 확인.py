@@ -8,7 +8,7 @@ import time
 led_pin = 4         #GPIO 4
 
 #불필요한 warning 제거
-GPIO.setwarning(False)
+GPIO.setwarnings(False)
 
 #GPIO 핀 번호 모드 설정
 GPIO.setmode(GPIO.BCM)
