@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HOME NETWORK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Current Temperature and Wind Speed</h2> 
+        </div>
+        <div class="main">
+            <div>
+                <button onclick="Temperature()">Get Temperature</button>
+            </div>
+            <div>
+                <button onclick="WindSpeed()">Get Wind Speed</button>
+            </div>
+        </div>
+        <div id="result">
+        </div>
+    </div>
+<script>
+    function Temperature(){
+        fetch("/Temperature")
+        .then(response => response.json())
+        .then(data=> {
+            console.log(data);
+            let result = document.querySelector("#result");
+            result.innerHTML = "<h1>Date: " + data['baseDate'] + ", Time: " + data['baseTime'] + ", Temperature (C): " + (data['obsrValue'])+"</h1>";
+            
+            
+        });
+    }
+    function WindSpeed(){
+        fetch("/WindSpeed")
+        .then(response => response.json())
+        .then(data=> {
+            console.log(data);
+            let result = document.querySelector("#result");
+            result.innerHTML = "<h1>Date: " + data['baseDate'] + ", Time: " + data['baseTime'] + ", WindSpeed (m/s): " + (data['obsrValue'])+"</h1>";
+            
+        });
+      }
+    </script>
+</body>
+</html>
