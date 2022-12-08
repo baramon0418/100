@@ -1,0 +1,417 @@
+@media (min-width: 768px) and (max-width:991px) {
+      #menu {
+        height: 210px;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .section input[id*="slide"] {
+      display: none;
+    }
+
+    .section .slidewrap {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .section .slidelist {
+      white-space: nowrap;
+      font-size: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section .slidelist>li {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      transition: all .5s;
+    }
+
+    .section .slidelist>li>a {
+      display: block;
+      position: relative;
+    }
+
+    .section .slidelist>li>a img {
+      width: 100%;
+    }
+
+    .section .slidelist label {
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 50px;
+      cursor: pointer;
+    }
+
+    .section .slidelist .textbox {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .section .slidelist .textbox h3 {
+      font-size: 36px;
+      color: #fff;
+      ;
+      transform: translateY(30px);
+      transition: all .5s;
+    }
+
+    .section .slidelist .textbox p {
+      font-size: 16px;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all .5s;
+    }
+
+    /* input에 체크되면 슬라이드 효과 */
+    .section input[id="slide01"]:checked~.slidewrap .slidelist>li {
+      transform: translateX(0%);
+    }
+
+    .section input[id="slide02"]:checked~.slidewrap .slidelist>li {
+      transform: translateX(-100%);
+    }
+
+    .section input[id="slide03"]:checked~.slidewrap .slidelist>li {
+      transform: translateX(-200%);
+    }
+
+    /* input에 체크되면 텍스트 효과 */
+    .section input[id="slide01"]:checked~.slidewrap li:nth-child(1) .textbox h3 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .2s;
+    }
+
+    .section input[id="slide01"]:checked~.slidewrap li:nth-child(1) .textbox p {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .4s;
+    }
+
+    .section input[id="slide02"]:checked~.slidewrap li:nth-child(2) .textbox h3 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .2s;
+    }
+
+    .section input[id="slide02"]:checked~.slidewrap li:nth-child(2) .textbox p {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .4s;
+    }
+
+    .section input[id="slide03"]:checked~.slidewrap li:nth-child(3) .textbox h3 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .2s;
+    }
+
+    .section input[id="slide03"]:checked~.slidewrap li:nth-child(3) .textbox p {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .4s;
+    }
+
+    /* 좌,우 슬라이드 버튼 */
+    .slide-control>div {
+      display: none;
+    }
+
+    .section .left {
+      left: 0px;
+      background: url('./img/left.png') center center / 100% no-repeat;
+    }
+
+    .section .right {
+      right: 0px;
+      background: url('./img/right.png') center center / 100% no-repeat;
+    }
+
+    .section input[id="slide01"]:checked~.slidewrap .slide-control>div:nth-child(1) {
+      display: block;
+    }
+
+    .section input[id="slide02"]:checked~.slidewrap .slide-control>div:nth-child(2) {
+      display: block;
+    }
+
+    .section input[id="slide03"]:checked~.slidewrap .slide-control>div:nth-child(3) {
+      display: block;
+    }
+
+    /* 페이징 */
+    .slide-pagelist {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .slide-pagelist>li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .slide-pagelist>li>label {
+      display: block;
+      padding: 5px 13px;
+      border-radius: 30px;
+      background: #ccc;
+      margin: 20px 10px;
+      cursor: pointer;
+    }
+
+    .section input[id="slide01"]:checked~.slidewrap .slide-pagelist>li:nth-child(1)>label {
+      background: #999;
+    }
+
+    .section input[id="slide02"]:checked~.slidewrap .slide-pagelist>li:nth-child(2)>label {
+      background: #999;
+    }
+
+    .section input[id="slide03"]:checked~.slidewrap .slide-pagelist>li:nth-child(3)>label {
+      background: #999;
+    }
+
+/*전체적인 css*/
+    #container {
+      width: 1500px;
+      padding: 20px;
+      margin: 0 auto;
+      text-align: center;
+    }
+   
+    /*헤더 css*/
+    #header {
+      display: flex;
+      padding: 20px;
+      margin-bottom: 40px;
+
+    }
+
+/* 폼 css*/
+    #form {
+
+      margin: auto;
+      margin-bottom:70px;
+    }
+
+    
+/* 로고 css*/
+    .logo { 
+      margin: auto;
+    }
+
+/*로그인 css*/
+    #login {
+      text-decoration: none;
+      margin-right: -4px;
+      margin: auto;
+      display: inline;
+      font-size: 0px;
+    }
+    #login>a{
+      color:black;
+      font-size: 25px;
+    }
+    #login>a:link {
+      color : black;
+    }
+    #login>a:visited {
+      color : black;
+    }
+    #login>a:hover {
+      color : black;
+    }
+    #login>a:active {
+      color : black
+    }
+
+    #content {
+      display: block;
+      width: 1450px;
+      padding: 20px;
+
+      margin-bottom: 20px;
+    }
+
+    #view {
+      margin-left: 40px;
+
+      width: 1300px;
+      height: 500px;
+    }
+
+    .row1 {
+      text-align: left;
+      margin: auto;
+      margin-top: 50px;
+      width: 1450px;
+
+    }
+
+    .row1-1 {
+      float: left;
+      width: 430px;
+      padding: 10px;
+      line-height:30px;
+    }
+
+    .row1-2 {
+      float: left;
+      width: 430px;
+
+      padding: 10px;
+      line-height:30px;
+    }
+
+    .row1-3 {
+      float: left;
+      width: 460px;
+      padding: 10px;
+      line-height:30px;
+    }
+
+    .row2 {
+      padding-top: 100px;
+      width: 1450px;
+      clear: both;
+      margin: auto;
+
+    }
+
+    .row2-1 {
+      float: left;
+      width: 670px;
+      padding: 10px;
+      line-height:30px;
+    }
+
+    .row2-2 {
+      float: left;
+      width: 690px;
+      padding: 10px;
+      line-height:30px;
+    }
+
+    #footer {
+      margin-top: 500px;
+      clear: both;
+      padding: 20px;
+    }
+
+    footer p {
+
+      font-size: 25px;
+      margin: 30px;
+    }
+
+    li {
+      list-style: none
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .menu {                                     
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: absoulute;
+      z-index: 2;
+      
+    }
+
+    .menu>li {
+      width: 14.285%;
+      float: left;
+      text-align: center;
+      line-height: 35px;
+      background-color: #5778ff;
+
+    }
+
+    .menu a {
+      color: #fff;
+      font-size:19.5px;
+    }
+
+    .submenu>li { 
+      width: 207px; 
+      line-height: 50px;
+      background-color: #94a9ff;
+    }
+
+    .submenu { /* 드롭다운바 */
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .menu>li:hover {
+      background-color: #94a9ff;
+      transition-duration: 0.5s;
+    }
+
+    .menu>li:hover .submenu {
+      height: 250px;
+      transition-duration: 1s;
+    }
+
+    .submenu>li:hover {
+      background-color: #5778ff;
+      transition-duration: 0.5s;
+
+    }
+
+/*폰트 설정*/
+    @font-face {
+      font-family: 'DungGeunMo';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+/* body안 모든 폰트를 DungGeunMo로 설정 */
+    body {
+      font-family: 'DungGeunMo';
+    }
+
+
+/*로그인*/
+
+.info #info__id {
+  position: relative;
+}
+
+#info__id button {
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto 0;
+  border-radius: 3px;
+}
+#usermenu {
+
+  margin: auto;
+  font-size: 50px;
+  text-align: center;
+}
