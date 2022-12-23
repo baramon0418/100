@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Current Temperature and Wind Speed and Relative Humidity</h2>
+        </div>
+        <div class="main">
+            <div>
+                <button onclick="get_temp()">Get Temperature</button>
+            </div>
+            <div>
+                <button onclick="get_wspd()">Get Wind Speed</button>
+            </div>
+            <div>
+                <button onclick="get_rehd()">Get Relative Humidity</button>
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function get_temp(){
+            fetch("/get/temp")
+            .then(response=> response.json())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data.result == "ok"){
+                	result.innerHTML = "<h2>Date: " + data.baseDate + ", Time: " + data.baseTime + ", Temperature (C): " + data.obsrValue + "</h2>";
+				}else if(data.result == "fail"){
+					result.innerHTML = "<h2>No observation data</h2>";
+                }else{
+                    result.innerHTML = "<h2>error</h2>";
+                }
+            });
+        }
+        function get_wspd(){
+            fetch("/get/wspd")
+            .then(response=> response.json())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data.result == "ok"){
+                    result.innerHTML = "<h2>Date: " + data.baseDate + ", Time: " + data.baseTime + ", Wind speed (m/s): " + data.obsrValue + "</h2>";
+ 				}else if(data.result == "fail"){
+					result.innerHTML = "<h2>No observation data</h2>";                   
+                }else{
+                	result.innerHTML = "error";
+                }
+            });
+        }
+
+        function get_rehd(){
+            fetch("/get/rehd")
+            .then(response=> response.json())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data.result == "ok"){
+                    result.innerHTML = "<h2>Date: " + data.baseDate + ", Time: " + data.baseTime + ", Get Relative Humidity (%): " + data.obsrValue + "</h2>";
+ 				}else if(data.result == "fail"){
+					result.innerHTML = "<h2>No observation data</h2>";                   
+                }else{
+                	result.innerHTML = "error";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
